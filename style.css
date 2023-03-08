@@ -3,10 +3,20 @@
     margin: 0;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+
+}
+
 #game {
     width: 500px;
     height: 200px;
     border: 1px solid black;
+    overflow: hidden;
 }
 
 #character {
@@ -17,6 +27,10 @@
     top: 150px;
 }
 
+.animate {
+    animation: jump 0.5s;
+}
+
 #block {
     width: 20px;
     height: 20px;
@@ -24,5 +38,17 @@
     position: relative;
     top: 130px;
     left: 480px;
+    animation: block 1s infinite linear;
 }
 
+@keyframes block {
+    0% { left: 480px }
+    100% { left: -40px }
+}
+
+@keyframes jump {
+    0% { top: 150px }
+    30% { top: 100px }
+    70% { top: 100px }
+    100% { top: 150px }
+}
